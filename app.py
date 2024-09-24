@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-import pandas as pd
 
 # Definindo a URL base da API
 BASE_URL = 'http://127.0.0.1:5000'
