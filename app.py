@@ -54,7 +54,7 @@ def cadastrar_paciente():
             # Traduzir o diagnóstico para português
             diagnostico_traduzido = traduzir_diagnostico(diagnostico)
             
-            st.success(f"Paciente {name} cadastrado com sucesso!")
+            st.success(f"Paciente {name} cadastrado(a) com sucesso!")
             st.write(f"Diagnóstico do paciente: **{diagnostico_traduzido}**")
         elif response.status_code == 409:
             st.error("Paciente já existente na base.")
@@ -124,7 +124,7 @@ def deletar_paciente():
         if name:
             response = requests.delete(f'{BASE_URL}/paciente', params={'name': name})
             if response.status_code == 200:
-                st.success(f"Paciente {name} deletado com sucesso!")
+                st.success(f"Paciente {name} deletado(a) com sucesso!")
                 # Limpar o estado para forçar o recarregamento dos pacientes
                 if 'pacientes_data' in st.session_state:
                     del st.session_state['pacientes_data']
